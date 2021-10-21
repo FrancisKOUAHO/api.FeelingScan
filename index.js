@@ -3,9 +3,9 @@ const express = require('express')
 const multer = require('multer');
 const cors = require('cors');
 const fileExtension = require('file-extension')
-const Picture = require('../src/models/dataPicture')
+const Picture = require('./src/models/dataPicture')
 
-const connection = require("./config/connectToDatabase");
+const connection = require("./src/config/connectToDatabase");
 
 //CREATE EXPRESS APP
 const app = express();

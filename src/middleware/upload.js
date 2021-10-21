@@ -5,7 +5,7 @@ import fileExtension from "file-extension";
 const storage = multer.diskStorage({
     // Setting directory on disk to save uploaded files
     destination: function (req, file, cb) {
-        cb(null, 'uploads')
+        cb(null, '/uploads/picture/')
     },
 
     // Setting name of file saved

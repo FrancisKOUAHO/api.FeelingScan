@@ -8,6 +8,13 @@ import {Picture} from "./src/models/dataPicture"
 import {connection} from "./src/config/connectToDatabase"
 import {upload} from "./src/middleware/upload";
 import {getPicture, savePicture} from "./src/controllers/upload.controller";
+import {saveMusic, getMusic} from "./src/controllers/uploadMusic.controller";
+import multer from "multer";
+import path from 'path';
+import fs from "fs"
+
+const __dirname = path.resolve();
+const uploadFileMuisc = multer()
 
 
 dotenv.config()
@@ -29,9 +36,11 @@ app.get('/', function (req, res) {
 
 
 app.post('/uploadFilePicture', upload.single('uploadedImage'), savePicture)
-
-
 app.get('/getPicture', getPicture)
+
+
+app.post('/uploadFileMuisc', uploadFileMuisc.single('soundBlob'), saveMusic);
+app.get('/getMusic', getMusic)
 
 
 connection()

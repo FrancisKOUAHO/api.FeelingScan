@@ -1,10 +1,11 @@
-const mongoose = require("mongoose");
-const dotenv = require('dotenv')
+import mongoose from "mongoose";
+import dotenv from "dotenv"
+
 dotenv.config()
 
 const MONGODB_URL = process.env.MONGODB_URL;
 
-module.exports = async function connection() {
+async function connection() {
     try {
         const connectionParams = {
             useNewUrlParser: true,
@@ -16,4 +17,8 @@ module.exports = async function connection() {
         console.log(error);
         console.log("could not connect to database");
     }
-};
+}
+
+export {
+    connection
+}

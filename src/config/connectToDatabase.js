@@ -1,4 +1,8 @@
 const mongoose = require("mongoose");
+const dotenv = require('dotenv')
+dotenv.config()
+
+const MONGODB_URL = process.env.MONGODB_URL;
 
 module.exports = async function connection() {
     try {
@@ -6,7 +10,7 @@ module.exports = async function connection() {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         };
-        await mongoose.connect("mongodb+srv://Francis:WAIRECRAFFTERLOUANNE2020@skyplus.e0y0i.mongodb.net/FeelingScan?retryWrites=true&w=majority", connectionParams);
+        await mongoose.connect(MONGODB_URL, connectionParams);
         console.log("connected to database");
     } catch (error) {
         console.log(error);

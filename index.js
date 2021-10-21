@@ -4,14 +4,21 @@ const multer = require('multer');
 const cors = require('cors');
 const fileExtension = require('file-extension')
 const Picture = require('./src/models/dataPicture')
+const dotenv = require('dotenv')
+dotenv.config()
+const PORT = parseInt(process.env.PORT || "8080");
 
 const connection = require("./src/config/connectToDatabase");
 
 //CREATE EXPRESS APP
 const app = express();
 
+
 // cors allow usage of server from different origin only for development
 app.use(cors())
+
+
+
 
 // Configure Storage
 const storage = multer.diskStorage({
@@ -43,6 +50,7 @@ const upload = multer({
         cb(undefined, true)
     }
 })
+
 
 
 //ROUTES WILL GO HERE
@@ -105,6 +113,8 @@ app.get('/getPicture', (req, res, next) => {
 })
 
 
+
+
 connection()
 
-app.listen(3000, () => console.log('Server started on port 3000'));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

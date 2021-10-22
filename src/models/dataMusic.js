@@ -25,6 +25,9 @@ const musicSchema = new Schema({
     },
     size: {
         type: String
+    },
+    type:{
+        default: "Joie"
     }
 }, {timestamps: true});
 const Music = mongoose.model('Music', musicSchema);

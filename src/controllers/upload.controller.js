@@ -2,7 +2,7 @@ import {Picture} from "../models/dataPicture";
 
 const savePicture = (req, res, next) => {
     const file = req.file
-    console.log(req);
+    console.log(req.file);
 
     let saveFile = new Picture({
         fieldname: req.file.fieldname,

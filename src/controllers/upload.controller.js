@@ -50,7 +50,6 @@ const getPicture = (req, res, next) => {
 }
 
 
-
 export {
     savePicture,
     getPicture

@@ -24,7 +24,7 @@ const saveMusic = (req, res, next) => {
 
     saveFile.save()
 
-    res.sendStatus(200); //send back that everything went ok
+    res.sendStatus(200);
 }
 
 

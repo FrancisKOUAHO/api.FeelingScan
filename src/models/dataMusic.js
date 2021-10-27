@@ -26,7 +26,7 @@ const musicSchema = new Schema({
     size: {
         type: String
     },
-    type:{
+    type: {
         type: String,
         default: 'joie'
     }

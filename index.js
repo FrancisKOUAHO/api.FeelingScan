@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.post('/uploadFilePicture', upload.single('uploadedImage'), savePicture)
+app.post('/uploadFilePicture', upload.single(), savePicture)
 app.get('/getPicture', getPicture)
 
 

@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
+    "start": "node --experimental-modules --es-module-specifier-resolution=node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
